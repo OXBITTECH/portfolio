@@ -153,6 +153,8 @@ const Hero = () => {
             <span className="role-tag">Community Architect</span>
             <span className="role-sep">•</span>
             <span className="role-tag">Discord Infrastructure</span>
+            <span className="role-sep">•</span>
+            <span className="role-tag">Crypto Ambassador</span>
           </p>
           <p className="hero__desc">
             I build and scale Web3 communities through infrastructure,
@@ -329,6 +331,14 @@ const servicesData = [
     color: 'orange' as const,
     desc: 'Alpha threads, educational content, and growth campaigns that position your project in front of the right Web3 audience.',
     features: ['Alpha threads', 'Educational content', 'Growth campaigns', 'Twitter/X strategy', 'Community newsletters'],
+  },
+  {
+    id: '05',
+    title: 'Crypto Project Ambassador',
+    icon: '🌐',
+    color: 'green' as const,
+    desc: 'Representing your project across Web3 communities, X/Twitter, and Telegram. I become the face of your brand — driving awareness, recruiting contributors, and building trust with your target audience.',
+    features: ['Community representation', 'X/Twitter amplification', 'KOL outreach', 'Telegram promotion', 'Brand advocacy', 'Contributor recruitment'],
   },
 ];
 
@@ -593,6 +603,86 @@ const OperatorLogs = () => (
   </section>
 );
 
+// ─── Proposal Modal ───────────────────────────────────────────────────────────
+const ProposalModal = ({ onClose }: { onClose: () => void }) => {
+  const [form, setForm] = useState({ project: '', service: '', details: '', contact: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Project Proposal: ${form.project || 'New Project'}`);
+    const body = encodeURIComponent(
+      `Hi David,\n\nI'd like to work with you.\n\nProject: ${form.project}\nService Needed: ${form.service}\n\nDetails:\n${form.details}\n\nMy Contact: ${form.contact}\n\nLooking forward to hearing from you!`
+    );
+    window.location.href = `mailto:bittech18@gmail.com?subject=${subject}&body=${body}`;
+    onClose();
+  };
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal glass" onClick={e => e.stopPropagation()}>
+        <div className="modal__header">
+          <span className="section-eyebrow text-green">// send.proposal()</span>
+          <button className="modal__close text-dim" onClick={onClose}>✕</button>
+        </div>
+        <h3 className="modal__title">Send a <span className="text-gradient">Proposal</span></h3>
+        <p className="modal__sub text-dim">Fill in the details and your email client will open to send it directly.</p>
+        <form className="proposal-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label className="form-label text-dim">Project Name</label>
+            <input
+              className="form-input"
+              placeholder="e.g. CryptoLaunch DAO"
+              value={form.project}
+              onChange={e => setForm(f => ({ ...f, project: e.target.value }))}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label text-dim">Service Needed</label>
+            <select
+              className="form-input form-select"
+              value={form.service}
+              onChange={e => setForm(f => ({ ...f, service: e.target.value }))}
+              required
+            >
+              <option value="">Select a service...</option>
+              <option>Discord Infrastructure</option>
+              <option>Community Leadership</option>
+              <option>Project Advisory</option>
+              <option>Content Systems</option>
+              <option>Crypto Project Ambassador</option>
+              <option>Multiple / Custom</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label className="form-label text-dim">Project Details</label>
+            <textarea
+              className="form-input form-textarea"
+              placeholder="Tell me about your project, goals, and what you need..."
+              value={form.details}
+              onChange={e => setForm(f => ({ ...f, details: e.target.value }))}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label text-dim">Your Contact (Telegram / X / Email)</label>
+            <input
+              className="form-input"
+              placeholder="e.g. @yourhandle"
+              value={form.contact}
+              onChange={e => setForm(f => ({ ...f, contact: e.target.value }))}
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn--glow btn--full">
+            Send Proposal →
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
 // ─── Contact ──────────────────────────────────────────────────────────────────
 const contactLinks = [
   {
@@ -621,58 +711,64 @@ const contactLinks = [
   },
 ];
 
-const Contact = () => (
-  <section id="contact" className="section contact">
-    <div className="container">
-      <div className="section-header">
-        <span className="section-eyebrow text-green">// contact.init()</span>
-        <h2 className="section-title">Let's <span className="text-gradient">Build</span></h2>
-        <p className="section-sub">Available for community building, Discord infrastructure, and growth advisory</p>
-      </div>
-      <div className="contact-grid">
-        <div className="contact-links-list">
-          {contactLinks.map(c => (
-            <a
-              key={c.platform}
-              href={c.href}
-              className={`contact-link glass contact-link--${c.color}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="contact-link__icon">{c.icon}</span>
-              <div className="contact-link__info">
-                <div className="contact-link__platform">{c.platform}</div>
-                <div className={`contact-link__handle text-${c.color}`}>{c.handle}</div>
-                <div className="contact-link__desc text-dim">{c.desc}</div>
-              </div>
-              <span className="contact-link__arrow text-dim">→</span>
-            </a>
-          ))}
-        </div>
+const Contact = () => {
+  const [showModal, setShowModal] = useState(false);
 
-        <div className="contact-services glass">
-          <div className="contact-services__title text-dim">// available.for()</div>
-          {[
-            { service: 'Community Building', status: 'OPEN', color: 'green' },
-            { service: 'Discord Infrastructure', status: 'OPEN', color: 'green' },
-            { service: 'Growth Advisory', status: 'OPEN', color: 'green' },
-            { service: 'Project Consulting', status: 'LIMITED', color: 'orange' },
-          ].map(s => (
-            <div key={s.service} className="avail-item">
-              <span className="avail-service">{s.service}</span>
-              <span className={`avail-status avail-status--${s.color}`}>{s.status}</span>
+  return (
+    <section id="contact" className="section contact">
+      {showModal && <ProposalModal onClose={() => setShowModal(false)} />}
+      <div className="container">
+        <div className="section-header">
+          <span className="section-eyebrow text-green">// contact.init()</span>
+          <h2 className="section-title">Let's <span className="text-gradient">Build</span></h2>
+          <p className="section-sub">Available for community building, Discord infrastructure, ambassador roles, and growth advisory</p>
+        </div>
+        <div className="contact-grid">
+          <div className="contact-links-list">
+            {contactLinks.map(c => (
+              <a
+                key={c.platform}
+                href={c.href}
+                className={`contact-link glass contact-link--${c.color}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="contact-link__icon">{c.icon}</span>
+                <div className="contact-link__info">
+                  <div className="contact-link__platform">{c.platform}</div>
+                  <div className={`contact-link__handle text-${c.color}`}>{c.handle}</div>
+                  <div className="contact-link__desc text-dim">{c.desc}</div>
+                </div>
+                <span className="contact-link__arrow text-dim">→</span>
+              </a>
+            ))}
+          </div>
+
+          <div className="contact-services glass">
+            <div className="contact-services__title text-dim">// available.for()</div>
+            {[
+              { service: 'Community Building', status: 'OPEN', color: 'green' },
+              { service: 'Discord Infrastructure', status: 'OPEN', color: 'green' },
+              { service: 'Crypto Project Ambassador', status: 'OPEN', color: 'green' },
+              { service: 'Growth Advisory', status: 'OPEN', color: 'green' },
+              { service: 'Project Consulting', status: 'LIMITED', color: 'orange' },
+            ].map(s => (
+              <div key={s.service} className="avail-item">
+                <span className="avail-service">{s.service}</span>
+                <span className={`avail-status avail-status--${s.color}`}>{s.status}</span>
+              </div>
+            ))}
+            <div className="contact-cta">
+              <button className="btn btn--glow btn--full" onClick={() => setShowModal(true)}>
+                Send a Proposal
+              </button>
             </div>
-          ))}
-          <div className="contact-cta">
-            <a href="mailto:bittech18@gmail.com" className="btn btn--glow btn--full">
-              Start a Project
-            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
 const Footer = () => (
@@ -682,7 +778,7 @@ const Footer = () => (
         <span className="brand-tilde">~/</span>
         <span className="brand-name">David</span>
       </div>
-      <p className="footer__sub text-dim">Web3 Operator • Community Architect • Discord Infrastructure</p>
+      <p className="footer__sub text-dim">Web3 Operator • Community Architect • Discord Infrastructure • Crypto Ambassador</p>
       <div className="footer__links">
         {['home', 'stack', 'services', 'logs', 'contact'].map(l => (
           <a key={l} href={`#${l}`}>{l}</a>
