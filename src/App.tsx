@@ -111,6 +111,8 @@ const Hero = () => {
     'Web3 Operator',
     'Growth Systems Builder',
     'Project Advisor',
+    'Crypto Twitter Manager',
+    'Web3 Intern',
   ]);
 
   const { ref: statsRef, inView: statsIn } = useInView(0.1);
@@ -155,6 +157,8 @@ const Hero = () => {
             <span className="role-tag">Discord Infrastructure</span>
             <span className="role-sep">•</span>
             <span className="role-tag">Crypto Ambassador</span>
+            <span className="role-sep">•</span>
+            <span className="role-tag">X/Twitter Manager</span>
           </p>
           <p className="hero__desc">
             I build and scale Web3 communities through infrastructure,
@@ -199,6 +203,8 @@ const Hero = () => {
                 <span className="t-green">✓</span> Discord Infrastructure<br />
                 <span className="t-green">✓</span> Community Architecture<br />
                 <span className="t-green">✓</span> Web3 Growth Systems<br />
+                <span className="t-green">✓</span> Twitter/X Management<br />
+                <span className="t-green">✓</span> Crypto Project Intern<br />
                 <span className="t-dim"># Available for new projects</span>
               </div>
             </div>
@@ -329,8 +335,8 @@ const servicesData = [
     title: 'Content Systems',
     icon: '📡',
     color: 'orange' as const,
-    desc: 'Alpha threads, educational content, and growth campaigns that position your project in front of the right Web3 audience.',
-    features: ['Alpha threads', 'Educational content', 'Growth campaigns', 'Twitter/X strategy', 'Community newsletters'],
+    desc: 'Alpha threads, educational content, and growth campaigns that position your project in front of the right Web3 audience. I also work directly as an intern inside crypto projects — running and managing their X/Twitter accounts day-to-day.',
+    features: ['Alpha threads', 'Educational content', 'Growth campaigns', 'Twitter/X account management', 'Community newsletters'],
   },
   {
     id: '05',
@@ -488,58 +494,6 @@ const DiscordShowcase = () => (
 );
 
 
-// ─── Testimonials ─────────────────────────────────────────────────────────────
-const testimonials = [
-  {
-    quote: 'David helped us scale our community before our token launch. The Discord infrastructure was bulletproof — zero raids, smooth onboarding, and the ambassador program brought in 500+ genuine contributors.',
-    author: 'Alex K.',
-    role: 'Founder',
-    project: 'CatCents',
-    color: 'green' as const,
-  },
-  {
-    quote: "The best community operator I've worked with. David didn't just build our Discord — they built us a community system. The role architecture and automation flows are still running perfectly months later.",
-    author: 'Sarah M.',
-    role: 'Community Head',
-    project: 'Monad Ecosystem',
-    color: 'purple' as const,
-  },
-  {
-    quote: 'David understands Web3 community at a systems level. Not just vibes and Twitter posts — actual infrastructure, retention mechanics, and growth loops. Rare operator skill set.',
-    author: 'Dev',
-    role: 'Anonymous Founder',
-    project: 'DeFi Protocol',
-    color: 'blue' as const,
-  },
-];
-
-const Testimonials = () => (
-  <section className="section testimonials">
-    <div className="container">
-      <div className="section-header">
-        <span className="section-eyebrow text-green">// testimonials</span>
-        <h2 className="section-title">What <span className="text-gradient">Founders Say</span></h2>
-      </div>
-      <div className="testimonials-grid">
-        {testimonials.map(t => (
-          <div key={t.author} className={`testimonial-card glass testimonial-card--${t.color}`}>
-            <div className="testimonial-quote">"</div>
-            <p className="testimonial-text">{t.quote}</p>
-            <div className="testimonial-author">
-              <div className={`testimonial-avatar testimonial-avatar--${t.color}`}>
-                {t.author[0]}
-              </div>
-              <div>
-                <div className="testimonial-name">{t.author}</div>
-                <div className="testimonial-role text-dim">{t.role} @ {t.project}</div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
 
 // ─── Operator Logs ────────────────────────────────────────────────────────────
 const logs = [
@@ -750,6 +704,7 @@ const Contact = () => {
               { service: 'Community Building', status: 'OPEN', color: 'green' },
               { service: 'Discord Infrastructure', status: 'OPEN', color: 'green' },
               { service: 'Crypto Project Ambassador', status: 'OPEN', color: 'green' },
+              { service: 'Twitter/X Management', status: 'OPEN', color: 'green' },
               { service: 'Growth Advisory', status: 'OPEN', color: 'green' },
               { service: 'Project Consulting', status: 'LIMITED', color: 'orange' },
             ].map(s => (
@@ -800,7 +755,6 @@ export default function App() {
       <TechStack />
       <Services />
       <DiscordShowcase />
-      <Testimonials />
       <OperatorLogs />
       <Contact />
       <Footer />
