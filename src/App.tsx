@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import XAnalyzer from './XAnalyzer';
-import ShitpostGenerator from './ShitpostGenerator';
 
 // ─── Typewriter Hook ──────────────────────────────────────────────────────────
 function useTypewriter(words: string[], speed = 80, pause = 1800) {
@@ -94,12 +93,6 @@ const Navbar = () => {
           onClick={() => { setMenuOpen(false); navigate('/xanalyzer'); }}
         >
           X Analyzer
-        </button>
-        <button
-          className="navbar__link navbar__link--shitpost"
-          onClick={() => { setMenuOpen(false); navigate('/shitpost'); }}
-        >
-          CT Drafter
         </button>
       </div>
       <div className="navbar__right">
@@ -784,20 +777,11 @@ const AnalyzerPage = () => (
   </div>
 );
 
-const ShitpostPage = () => (
-  <div className="app">
-    <div className="grid-bg" />
-    <div className="scanline" />
-    <ShitpostGenerator />
-  </div>
-);
-
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/xanalyzer" element={<AnalyzerPage />} />
-      <Route path="/shitpost" element={<ShitpostPage />} />
     </Routes>
   );
 }
