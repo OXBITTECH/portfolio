@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import XAnalyzer from './XAnalyzer';
 
 // ─── Typewriter Hook ──────────────────────────────────────────────────────────
 function useTypewriter(words: string[], speed = 80, pause = 1800) {
@@ -63,7 +64,7 @@ function useInView(threshold = 0.2) {
 }
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
-const Navbar = () => {
+const Navbar = ({ onAnalyzerClick }: { onAnalyzerClick: () => void }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -85,6 +86,12 @@ const Navbar = () => {
             {l}
           </a>
         ))}
+        <button
+          className="navbar__link navbar__link--analyzer"
+          onClick={() => { setMenuOpen(false); onAnalyzerClick(); }}
+        >
+          X Analyzer
+        </button>
       </div>
       <div className="navbar__right">
         <div className="navbar__status">
@@ -746,11 +753,23 @@ const Footer = () => (
 
 // ─── App ──────────────────────────────────────────────────────────────────────
 export default function App() {
+  const [page, setPage] = useState<'home' | 'analyzer'>('home');
+
+  if (page === 'analyzer') {
+    return (
+      <div className="app">
+        <div className="grid-bg" />
+        <div className="scanline" />
+        <XAnalyzer onBack={() => setPage('home')} />
+      </div>
+    );
+  }
+
   return (
     <div className="app">
       <div className="grid-bg" />
       <div className="scanline" />
-      <Navbar />
+      <Navbar onAnalyzerClick={() => setPage('analyzer')} />
       <Hero />
       <TechStack />
       <Services />
