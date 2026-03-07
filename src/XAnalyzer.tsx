@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // ─── Deterministic hash from username ────────────────────────────────────────
 function hashStr(str: string, seed: number): number {
@@ -102,7 +103,8 @@ function buildScanLines(username: string) {
 }
 
 // ─── Main component ───────────────────────────────────────────────────────────
-export default function XAnalyzer({ onBack }: { onBack: () => void }) {
+export default function XAnalyzer() {
+  const navigate = useNavigate();
   const [input, setInput]         = useState('');
   const [phase, setPhase]         = useState<'idle' | 'scanning' | 'results'>('idle');
   const [username, setUsername]   = useState('');
@@ -154,7 +156,7 @@ export default function XAnalyzer({ onBack }: { onBack: () => void }) {
 
       {/* Back nav */}
       <div className="xa-topbar container">
-        <button className="xa-back" onClick={onBack}>
+        <button className="xa-back" onClick={() => navigate('/')}>
           <span className="text-dim">←</span> Back to Portfolio
         </button>
         <span className="xa-brand">

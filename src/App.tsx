@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import XAnalyzer from './XAnalyzer';
 
 // ─── Typewriter Hook ──────────────────────────────────────────────────────────
@@ -64,9 +65,10 @@ function useInView(threshold = 0.2) {
 }
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
-const Navbar = ({ onAnalyzerClick }: { onAnalyzerClick: () => void }) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -88,7 +90,7 @@ const Navbar = ({ onAnalyzerClick }: { onAnalyzerClick: () => void }) => {
         ))}
         <button
           className="navbar__link navbar__link--analyzer"
-          onClick={() => { setMenuOpen(false); onAnalyzerClick(); }}
+          onClick={() => { setMenuOpen(false); navigate('/xanalyzer'); }}
         >
           X Analyzer
         </button>
@@ -752,31 +754,34 @@ const Footer = () => (
 );
 
 // ─── App ──────────────────────────────────────────────────────────────────────
+const HomePage = () => (
+  <div className="app">
+    <div className="grid-bg" />
+    <div className="scanline" />
+    <Navbar />
+    <Hero />
+    <TechStack />
+    <Services />
+    <DiscordShowcase />
+    <OperatorLogs />
+    <Contact />
+    <Footer />
+  </div>
+);
+
+const AnalyzerPage = () => (
+  <div className="app">
+    <div className="grid-bg" />
+    <div className="scanline" />
+    <XAnalyzer />
+  </div>
+);
+
 export default function App() {
-  const [page, setPage] = useState<'home' | 'analyzer'>('home');
-
-  if (page === 'analyzer') {
-    return (
-      <div className="app">
-        <div className="grid-bg" />
-        <div className="scanline" />
-        <XAnalyzer onBack={() => setPage('home')} />
-      </div>
-    );
-  }
-
   return (
-    <div className="app">
-      <div className="grid-bg" />
-      <div className="scanline" />
-      <Navbar onAnalyzerClick={() => setPage('analyzer')} />
-      <Hero />
-      <TechStack />
-      <Services />
-      <DiscordShowcase />
-      <OperatorLogs />
-      <Contact />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/xanalyzer" element={<AnalyzerPage />} />
+    </Routes>
   );
 }
