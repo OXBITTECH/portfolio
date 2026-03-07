@@ -553,7 +553,7 @@ ul { list-style: none; }
   transition: all 0.2s;
 }
 .stack-item:hover { background: rgba(255, 255, 255, 0.04); border-color: var(--border); }
-.stack-item__icon { font-size: 16px; }
+.stack-item__icon { font-size: 13px; font-family: var(--font-mono); color: var(--text-dim); min-width: 28px; }
 .stack-item__name { flex: 1; font-size: 14px; }
 .stack-item__dot  { font-size: 8px; }
 
@@ -580,7 +580,7 @@ ul { list-style: none; }
   margin-bottom: 20px;
 }
 .service-id   { font-family: var(--font-mono); font-size: 12px; }
-.service-icon { font-size: 30px; }
+.service-icon { font-size: 18px; font-family: var(--font-mono); color: var(--text-dim); letter-spacing: -0.5px; }
 .service-card__title { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
 .service-card__desc  { font-size: 14px; color: var(--text-dim); line-height: 1.75; margin-bottom: 22px; }
 
@@ -721,7 +721,7 @@ ul { list-style: none; }
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
 }
-.system-icon { font-size: 18px; }
+.system-icon { font-size: 13px; font-family: var(--font-mono); color: var(--text-dim); min-width: 32px; }
 .system-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
 .system-desc { font-family: var(--font-mono); font-size: 11px; }
 
@@ -736,7 +736,7 @@ ul { list-style: none; }
   transition: transform 0.2s, border-color 0.2s;
 }
 .discord-feature:hover { transform: translateY(-4px); border-color: rgba(0, 255, 65, 0.3); }
-.discord-feature__icon  { font-size: 28px; margin-bottom: 12px; }
+.discord-feature__icon  { font-size: 16px; font-family: var(--font-mono); color: var(--text-dim); margin-bottom: 12px; }
 .discord-feature__title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
 .discord-feature__desc  { font-size: 13px; line-height: 1.65; }
 
@@ -881,7 +881,7 @@ ul { list-style: none; }
 .contact-link--blue:hover   { box-shadow: 0 4px 24px rgba(59,  130, 246, 0.1); }
 .contact-link--orange:hover { box-shadow: 0 4px 24px rgba(245, 158, 11,  0.1); }
 
-.contact-link__icon     { font-size: 24px; }
+.contact-link__icon     { font-size: 14px; font-family: var(--font-mono); font-weight: 700; min-width: 36px; text-align: center; }
 .contact-link__info     { flex: 1; }
 .contact-link__platform { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
 .contact-link__handle   { font-family: var(--font-mono); font-size: 13px; margin-bottom: 2px; }

@@ -243,33 +243,33 @@ const stackData = [
     category: '// Infrastructure',
     color: 'green' as const,
     items: [
-      { name: 'Discord Bots', icon: '🤖' },
-      { name: 'Webhooks', icon: '🔗' },
-      { name: 'Automation Systems', icon: '⚙️' },
-      { name: 'Role Systems', icon: '🎭' },
-      { name: 'Anti-Raid Protection', icon: '🛡️' },
+      { name: 'Discord Bots', icon: '>_' },
+      { name: 'Webhooks', icon: '{}' },
+      { name: 'Automation Systems', icon: '//' },
+      { name: 'Role Systems', icon: '[]' },
+      { name: 'Anti-Raid Protection', icon: '><' },
     ],
   },
   {
     category: '// Web3 Tools',
     color: 'purple' as const,
     items: [
-      { name: 'Galxe', icon: '🌌' },
-      { name: 'Zealy', icon: '⚡' },
-      { name: 'Guild.xyz', icon: '🏰' },
-      { name: 'Snapshot', icon: '📸' },
-      { name: 'Collab.land', icon: '🤝' },
+      { name: 'Galxe', icon: '.*' },
+      { name: 'Zealy', icon: '>>' },
+      { name: 'Guild.xyz', icon: '/g' },
+      { name: 'Snapshot', icon: '[]' },
+      { name: 'Collab.land', icon: '&&' },
     ],
   },
   {
     category: '// Tech',
     color: 'blue' as const,
     items: [
-      { name: 'Node.js', icon: '💚' },
-      { name: 'REST APIs', icon: '🔌' },
-      { name: 'Automation Scripts', icon: '📜' },
-      { name: 'AI Workflows', icon: '🧠' },
-      { name: 'Data Analytics', icon: '📊' },
+      { name: 'Node.js', icon: '{}' },
+      { name: 'REST APIs', icon: '~=' },
+      { name: 'Automation Scripts', icon: '<>' },
+      { name: 'AI Workflows', icon: 'AI' },
+      { name: 'Data Analytics', icon: '/\\' },
     ],
   },
 ];
@@ -309,7 +309,7 @@ const servicesData = [
   {
     id: '01',
     title: 'Discord Infrastructure',
-    icon: '⚡',
+    icon: '>_',
     color: 'green' as const,
     desc: 'Full server architecture built for scale. Role systems, automation, bot integration, anti-raid protection, and community funnels designed for Web3 projects.',
     features: ['Server architecture', 'Role systems', 'Bot integration', 'Anti-raid protection', 'Community funnels'],
@@ -317,7 +317,7 @@ const servicesData = [
   {
     id: '02',
     title: 'Community Leadership',
-    icon: '👥',
+    icon: '[]',
     color: 'purple' as const,
     desc: 'End-to-end community management with moderation teams, engagement strategy, growth campaigns, and culture building that converts holders into loyal members.',
     features: ['Moderation teams', 'Engagement strategy', 'Growth campaigns', 'Community culture', 'Ambassador programs'],
@@ -325,7 +325,7 @@ const servicesData = [
   {
     id: '03',
     title: 'Project Advisory',
-    icon: '🎯',
+    icon: '//',
     color: 'blue' as const,
     desc: 'Strategic advisory for Web3 projects covering go-to-market, ambassador programs, incentive design, and community token mechanics.',
     features: ['Go-to-market strategy', 'Ambassador programs', 'Incentive design', 'Token mechanics', 'Launch strategy'],
@@ -333,7 +333,7 @@ const servicesData = [
   {
     id: '04',
     title: 'Content Systems',
-    icon: '📡',
+    icon: '<<',
     color: 'orange' as const,
     desc: 'Alpha threads, educational content, and growth campaigns that position your project in front of the right Web3 audience. I also work directly as an intern inside crypto projects — running and managing their X/Twitter accounts day-to-day.',
     features: ['Alpha threads', 'Educational content', 'Growth campaigns', 'Twitter/X account management', 'Community newsletters'],
@@ -341,7 +341,7 @@ const servicesData = [
   {
     id: '05',
     title: 'Crypto Project Ambassador',
-    icon: '🌐',
+    icon: '{}',
     color: 'green' as const,
     desc: 'Representing your project across Web3 communities, X/Twitter, and Telegram. I become the face of your brand — driving awareness, recruiting contributors, and building trust with your target audience.',
     features: ['Community representation', 'X/Twitter amplification', 'KOL outreach', 'Telegram promotion', 'Brand advocacy', 'Contributor recruitment'],
@@ -383,22 +383,22 @@ const Services = () => (
 
 // ─── Discord Showcase ─────────────────────────────────────────────────────────
 const discordChannels = [
-  { cat: 'INFORMATION', channels: ['📢 announcements', '📜 server-rules', '🎭 get-roles', '🗺️ roadmap', '📋 whitelist-info'] },
-  { cat: 'COMMUNITY', channels: ['👋 introductions', '☕ general', '🌅 gm-gm', '🎉 events', '🔥 alpha-chat'] },
-  { cat: 'HOLDERS (token-gated)', channels: ['💎 og-lounge', '🐋 whale-room', '📈 alpha-calls', '🏦 treasury-updates'] },
-  { cat: 'LAUNCH ZONE', channels: ['🚀 mint-alerts', '📊 analytics', '🤝 collab-drops', '💰 airdrop-tracker'] },
-  { cat: 'AMBASSADORS', channels: ['🌟 ambassador-lounge', '📋 tasks', '🏆 leaderboard', '💼 applications'] },
-  { cat: 'SUPPORT', channels: ['❓ help-desk', '🎫 create-ticket', '🔍 verify-wallet'] },
+  { cat: 'INFORMATION', channels: ['# announcements', '# server-rules', '# get-roles', '# roadmap', '# whitelist-info'] },
+  { cat: 'COMMUNITY', channels: ['# introductions', '# general', '# gm-gm', '# events', '# alpha-chat'] },
+  { cat: 'HOLDERS (token-gated)', channels: ['# og-lounge', '# whale-room', '# alpha-calls', '# treasury-updates'] },
+  { cat: 'LAUNCH ZONE', channels: ['# mint-alerts', '# analytics', '# collab-drops', '# airdrop-tracker'] },
+  { cat: 'AMBASSADORS', channels: ['# ambassador-lounge', '# tasks', '# leaderboard', '# applications'] },
+  { cat: 'SUPPORT', channels: ['# help-desk', '# create-ticket', '# verify-wallet'] },
 ];
 
 const discordRoles = [
-  { name: 'Core Team', color: '#f59e0b', icon: '👑' },
-  { name: 'Whale (500+ tokens)', color: '#00ff41', icon: '🐋' },
-  { name: 'OG Holder', color: '#8b5cf6', icon: '💎' },
-  { name: 'Ambassador', color: '#3b82f6', icon: '🌟' },
-  { name: 'Whitelist', color: '#f97316', icon: '📋' },
-  { name: 'Contributor', color: '#10b981', icon: '⚡' },
-  { name: 'Member', color: '#6b7280', icon: '👤' },
+  { name: 'Core Team', color: '#f59e0b', icon: '●' },
+  { name: 'Whale (500+ tokens)', color: '#00ff41', icon: '●' },
+  { name: 'OG Holder', color: '#8b5cf6', icon: '●' },
+  { name: 'Ambassador', color: '#3b82f6', icon: '●' },
+  { name: 'Whitelist', color: '#f97316', icon: '●' },
+  { name: 'Contributor', color: '#10b981', icon: '●' },
+  { name: 'Member', color: '#6b7280', icon: '●' },
 ];
 
 const DiscordShowcase = () => (
@@ -447,12 +447,12 @@ const DiscordShowcase = () => (
             <div className="discord-systems">
               <div className="discord-systems__title text-dim">// AUTOMATION SYSTEMS</div>
               {[
-                { icon: '🔗', name: 'Wallet Verification', desc: 'Collab.land / Guild.xyz → auto role on connect' },
-                { icon: '🛡️', name: 'Anti-Raid System', desc: 'Rate limit + account age + CAPTCHA gate' },
-                { icon: '🐋', name: 'Whale Detector', desc: 'On-chain balance check → instant role upgrade' },
-                { icon: '🚀', name: 'Mint & Launch Alerts', desc: 'Live bot push for mint, listing, price events' },
-                { icon: '📊', name: 'Community Analytics', desc: 'Activity, retention & growth dashboards' },
-                { icon: '🎯', name: 'Quest Engine', desc: 'Zealy / Galxe tasks → XP → reward pipeline' },
+                { icon: '{}', name: 'Wallet Verification', desc: 'Collab.land / Guild.xyz → auto role on connect' },
+                { icon: '><', name: 'Anti-Raid System', desc: 'Rate limit + account age + CAPTCHA gate' },
+                { icon: '//', name: 'Whale Detector', desc: 'On-chain balance check → instant role upgrade' },
+                { icon: '>>', name: 'Mint & Launch Alerts', desc: 'Live bot push for mint, listing, price events' },
+                { icon: '/\\', name: 'Community Analytics', desc: 'Activity, retention & growth dashboards' },
+                { icon: 'XP', name: 'Quest Engine', desc: 'Zealy / Galxe tasks → XP → reward pipeline' },
               ].map(s => (
                 <div key={s.name} className="discord-system-item">
                   <span className="system-icon">{s.icon}</span>
@@ -469,18 +469,18 @@ const DiscordShowcase = () => (
 
       <div className="discord-features-grid">
         {[
-          { icon: '🔗', title: 'Token-Gated Access', desc: 'Holders-only channels that unlock automatically based on on-chain balance. Works with any EVM token or NFT collection.' },
-          { icon: '🚀', title: 'Launch Infrastructure', desc: 'Full mint-day setup: countdown bots, mint alerts, live supply trackers, and holder verification flows.' },
-          { icon: '📋', title: 'Whitelist Management', desc: 'Automated WL collection, verification, and role distribution. Integrates with premint, allowlist tools, and custom forms.' },
-          { icon: '🎯', title: 'Quest & XP Systems', desc: 'Zealy and Galxe integration with custom XP logic, leaderboards, and on-chain reward pipelines.' },
-          { icon: '🌟', title: 'Ambassador Programs', desc: 'Full ambassador tracking system: task boards, contribution scoring, leaderboards, and tiered reward flows.' },
-          { icon: '🛡️', title: 'Anti-Raid & Security', desc: 'Multi-layer protection: CAPTCHA, account age filters, phone verification, slowmode, and auto-ban on suspicious patterns.' },
-          { icon: '🐋', title: 'Whale & Holder Rooms', desc: 'Exclusive channels gated by token thresholds. Auto-upgrades roles as holders accumulate more tokens.' },
-          { icon: '🗳️', title: 'Governance Integration', desc: 'Snapshot voting alerts, proposal channels, delegate tracking, and DAO announcement pipelines inside Discord.' },
-          { icon: '📊', title: 'Analytics & Reporting', desc: 'Live dashboards tracking member growth, retention rate, message activity, and engagement per channel.' },
-          { icon: '🤝', title: 'Collab & Partnership Drops', desc: 'Cross-server partnership channels, collab role drops, and announcement pipelines for co-marketing campaigns.' },
-          { icon: '💰', title: 'Airdrop Coordination', desc: 'Airdrop eligibility tracking, wallet collection flows, and automated role-based distribution notifications.' },
-          { icon: '🔔', title: 'Price & On-Chain Alerts', desc: 'Floor price bots, whale wallet trackers, and smart contract event alerts delivered straight into your server.' },
+          { icon: '{}', title: 'Token-Gated Access', desc: 'Holders-only channels that unlock automatically based on on-chain balance. Works with any EVM token or NFT collection.' },
+          { icon: '>>', title: 'Launch Infrastructure', desc: 'Full mint-day setup: countdown bots, mint alerts, live supply trackers, and holder verification flows.' },
+          { icon: '[]', title: 'Whitelist Management', desc: 'Automated WL collection, verification, and role distribution. Integrates with premint, allowlist tools, and custom forms.' },
+          { icon: 'XP', title: 'Quest & XP Systems', desc: 'Zealy and Galxe integration with custom XP logic, leaderboards, and on-chain reward pipelines.' },
+          { icon: '//', title: 'Ambassador Programs', desc: 'Full ambassador tracking system: task boards, contribution scoring, leaderboards, and tiered reward flows.' },
+          { icon: '><', title: 'Anti-Raid & Security', desc: 'Multi-layer protection: CAPTCHA, account age filters, phone verification, slowmode, and auto-ban on suspicious patterns.' },
+          { icon: '~=', title: 'Whale & Holder Rooms', desc: 'Exclusive channels gated by token thresholds. Auto-upgrades roles as holders accumulate more tokens.' },
+          { icon: 'DAO', title: 'Governance Integration', desc: 'Snapshot voting alerts, proposal channels, delegate tracking, and DAO announcement pipelines inside Discord.' },
+          { icon: '/\\', title: 'Analytics & Reporting', desc: 'Live dashboards tracking member growth, retention rate, message activity, and engagement per channel.' },
+          { icon: '&&', title: 'Collab & Partnership Drops', desc: 'Cross-server partnership channels, collab role drops, and announcement pipelines for co-marketing campaigns.' },
+          { icon: '$', title: 'Airdrop Coordination', desc: 'Airdrop eligibility tracking, wallet collection flows, and automated role-based distribution notifications.' },
+          { icon: '!', title: 'Price & On-Chain Alerts', desc: 'Floor price bots, whale wallet trackers, and smart contract event alerts delivered straight into your server.' },
         ].map(f => (
           <div key={f.title} className="discord-feature glass">
             <div className="discord-feature__icon">{f.icon}</div>
@@ -640,7 +640,7 @@ const ProposalModal = ({ onClose }: { onClose: () => void }) => {
 // ─── Contact ──────────────────────────────────────────────────────────────────
 const contactLinks = [
   {
-    icon: '✈️',
+    icon: 'TG',
     platform: 'Telegram',
     handle: '@iamtwcp',
     desc: 'Best for quick projects',
@@ -648,7 +648,7 @@ const contactLinks = [
     href: 'https://t.me/iamtwcp',
   },
   {
-    icon: '🐦',
+    icon: 'X',
     platform: 'X / Twitter',
     handle: '@Internxbt',
     desc: 'Follow for Web3 content',
@@ -656,7 +656,7 @@ const contactLinks = [
     href: 'https://x.com/Internxbt',
   },
   {
-    icon: '📧',
+    icon: '@',
     platform: 'Email',
     handle: 'bittech18@gmail.com',
     desc: 'For formal proposals',
