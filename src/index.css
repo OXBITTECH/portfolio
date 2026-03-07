@@ -1483,6 +1483,38 @@ ul { list-style: none; }
   max-width: 700px;
 }
 
+/* Share button states */
+.xa-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.xa-share-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.xa-share-btn--done {
+  background: var(--green-dim);
+  border: 1px solid var(--green);
+  color: var(--green);
+  box-shadow: var(--green-glow);
+}
+
+.xa-share-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
 @media (max-width: 768px) {
   .xa-teasers { grid-template-columns: repeat(2, 1fr); }
   .xa-stats-grid { grid-template-columns: 1fr; }
